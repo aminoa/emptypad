@@ -1,2 +1,2 @@
-# emptypad
+# Empty Pad
 An empty pad

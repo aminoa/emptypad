@@ -44,19 +44,19 @@
 
 <body>
     <!-- <button id="butt" onclick="mySave()"> test </button> -->
-    <textarea type="text" class="example line-1 anim-typewriter" id="text"> </textarea>
+    <textarea type="text" class="example line-1 anim-typewriter" id="text" spellcheck="false"> </textarea>
     <script>
-        // function mySave() {
-        //     var myContent = document.getElementById("text").value;
-        //     localStorage.setItem("myContent", myContent);
-        // }
-        // function myLoad() {
-        //     var myContent = localStorage.getItem("myContent");
-        //     document.getElementById("text").value = myContent;
-        // }
+        function mySave() {
+            var myContent = document.getElementById("text").value;
+            localStorage.setItem("myContent", myContent);
+        }
+        function myLoad() {
+            var myContent = localStorage.getItem("myContent");
+            document.getElementById("text").value = myContent;
+        }
 
-        // document.getElementById("text").oninput = function () { mySave(); };
-        // myLoad();
+        myLoad()
+        document.getElementById("text").oninput = function () { mySave(); };
 
     </script>
 

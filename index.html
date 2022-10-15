@@ -57,7 +57,9 @@
 
         // myLoad()
         // document.getElementById("text").oninput = function () { mySave(); };
-
+        window.onbeforeunload = function(e) {
+            return 'All notes written will be lost when this tab is closed. Are you sure you want to exit?';
+        };
     </script>
 
 </body>

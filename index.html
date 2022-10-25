@@ -46,19 +46,8 @@
     <!-- <button id="butt" onclick="mySave()"> test </button> -->
     <textarea type="text" class="example line-1 anim-typewriter" id="text" spellcheck="false"> </textarea>
     <script>
-        function mySave() {
-            var myContent = document.getElementById("text").value;
-            localStorage.setItem("myContent", myContent);
-        }
-        function myLoad() {
-            var myContent = localStorage.getItem("myContent");
-            document.getElementById("text").value = myContent;
-        }
-
-        myLoad()
-        document.getElementById("text").oninput = function () { mySave(); };
         window.onbeforeunload = function(e) {
-            return 'All notes written will be lost when this tab is closed. Are you sure you want to exit?';
+            return '';
         };
     </script>
 

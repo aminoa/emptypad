@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"
+    crossorigin="">
+    <link href=
+    "https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"
+    rel="stylesheet">
     <meta name="apple-mobile-web-app-capable" content="yes">
-
     <title>Empty Pad</title>
     <style>
-        body {
-            height: 100%;
-            background-color: rgb(25, 31, 31);
-            overflow: hidden;
-            /* Hide scrollbars */
-        }
-
         .example::-webkit-scrollbar {
             display: none;
         }
@@ -29,29 +23,24 @@
         }
 
         textarea {
-
-            width: 100%;
-            height: 96vh;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 100vh;
             resize: none;
             border: none;
             font-size: large;
             font-family: 'Roboto', sans-serif;
             outline: none;
             background-color: rgb(25, 31, 31);
-            color: rgb(179, 163, 163)
+            color: rgb(179, 163, 163);
         }
     </style>
 </head>
-
 <body>
     <!-- <button id="butt" onclick="mySave()"> test </button> -->
-    <textarea type="text" class="example line-1 anim-typewriter" id="text" spellcheck="false" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"> </textarea>
-    <script>
-        window.onbeforeunload = function(e) {
-            return '';
-        };
-    </script>
-
+    <textarea type="text" class="example line-1" id="text"
+    spellcheck="false"></textarea>
 </body>
-
 </html>

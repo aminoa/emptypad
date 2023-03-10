@@ -37,11 +37,29 @@
             color: rgb(179, 163, 163);
         }
     </style>
+    <script>
+        window.onbeforeunload = function() { return "Exit"; }
+        document.getElementById('textbox').addEventListener('keydown', function(e) {
+            if (e.key == 'Tab') {
+                e.preventDefault();
+                var start = this.selectionStart;
+                var end = this.selectionEnd;
+
+                // set textarea value to: text before caret + tab + text after caret
+                this.value = this.value.substring(0, start) +
+                "\t" + this.value.substring(end);
+
+                // put caret at right position again
+                this.selectionStart =
+                this.selectionEnd = start + 1;
+            }
+        });
+    </script>
 </head>
 <body>
     <!-- <button id="butt" onclick="mySave()"> test </button> -->
-    <textarea type="text" class="example line-1" id="text" spellcheck="false" 
-        onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"> 
-    </textarea>>
+    <textarea id="textbox" type="text" class="example line-1" id="text" spellcheck="false"
+        onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">
+    </textarea> 
 </body>
 </html>

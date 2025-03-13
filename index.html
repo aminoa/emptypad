@@ -36,6 +36,13 @@
             background-color: rgb(25, 31, 31);
             color: rgb(179, 163, 163);
         }
+
+        /* Fix white line bug for Firefox */
+        @-moz-document url-prefix() {
+            textarea {
+                top: -1px;
+            }
+        }
     </style>
     <script>
         window.onbeforeunload = function() { return "Exit"; }

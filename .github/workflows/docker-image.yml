@@ -15,4 +15,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag emptypad:${{ github.sha }}
+
+    - name: Save Docker image to tar
+      run: docker save emptypad:${{ github.sha }} -o image.tar
+
+    - name: Upload image artifact
+      uses: actions/upload-artifact@v4.6.2
+      with:
+        name: docker-image
+        path: image.tar
